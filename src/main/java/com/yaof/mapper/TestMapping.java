@@ -13,12 +13,12 @@ import com.yaof.pojo.Student;
 @Mapper
 public interface TestMapping {
 
-	@Cacheable(value = "common", key="'getTestString'")
-	public int getCount();
-	
-	@Cacheable(value = "default", key="'getAllStudent'")
-	public List<Object> getAllStudent();
-	
-	@CacheEvict(value="default",key="'getAllStudent'")
-	public void insertStudent(Student student);
+    @Cacheable(value = "common", key = "'getTestString'")
+    public int getCount();
+
+    @Cacheable(value = "default", key = "'getAllStudent'")
+    public List<Object> getAllStudent();
+
+    @CacheEvict(value = "default", key = "'getAllStudent'")
+    public void insertStudent(Student student);
 }

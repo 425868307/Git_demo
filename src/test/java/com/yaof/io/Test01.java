@@ -15,23 +15,23 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Test01 {
 
-	private static XSSFSheet sheet;
+    private static XSSFSheet sheet;
 
-	public static void main(String[] args) throws IOException {
-		String aa = "fkewpofjkpwoefewp";
-		System.out.println("初始："+aa);
-		System.out.println("初始bytes长度："+aa.getBytes().length);
-		
-		Encoder encoder = Base64.getEncoder();
-		byte[] encodeAa = encoder.encode(aa.getBytes());
-		System.out.println("jdk decode:" + new String(encodeAa));
-		
-		
-		InputStream is = new FileInputStream("C:\\Users\\42586\\Desktop\\新建 Microsoft Excel 工作表.xlsx");
-		XSSFWorkbook wb = new XSSFWorkbook(is);
-		sheet = wb.getSheetAt(0);
-		System.out.println(sheet.getRow(6).getCell(0).getStringCellValue());
-		
-	}
+    public static void main(String[] args) throws IOException {
+        String aa = "fkewpofjkpwoefewp";
+        System.out.println("初始：" + aa);
+        System.out.println("初始bytes长度：" + aa.getBytes().length);
+
+        Encoder encoder = Base64.getEncoder();
+        byte[] encodeAa = encoder.encode(aa.getBytes());
+        System.out.println("jdk decode:" + new String(encodeAa));
+
+
+        InputStream is = new FileInputStream("C:\\Users\\42586\\Desktop\\新建 Microsoft Excel 工作表.xlsx");
+        XSSFWorkbook wb = new XSSFWorkbook(is);
+        sheet = wb.getSheetAt(0);
+        System.out.println(sheet.getRow(6).getCell(0).getStringCellValue());
+
+    }
 
 }

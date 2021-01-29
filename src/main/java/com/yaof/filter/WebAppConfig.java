@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 public class WebAppConfig extends WebMvcConfigurerAdapter {
-	
-	private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
+
+    private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
 
     // 多个拦截器组成一个拦截器链
     // addPathPatterns 用于添加拦截规则
@@ -29,7 +29,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
                 .addPathPatterns("/**") //拦截所有请求
                 .excludePathPatterns("/test/test", "/Doctor/**", "/SMS/**");//对应的不拦截的请求
     }
-    
+
     public class LoginInterceptor implements HandlerInterceptor {
 
         /**
@@ -43,14 +43,16 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
          */
         @Override
         public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        	log.info("---------------开始进入地址拦截器-------------------");
-        	return true;
+            log.info("---------------开始进入地址拦截器-------------------");
+            return true;
         }
+
         //访问controller之后 访问视图之前被调用
         @Override
         public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
             log.info("--------------处理请求完成后视图渲染之前的处理操作---------------");
         }
+
         //访问视图之后被调用
         @Override
         public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {

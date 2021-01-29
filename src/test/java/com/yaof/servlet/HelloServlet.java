@@ -9,40 +9,40 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 public class HelloServlet implements Servlet {
-	
-	public HelloServlet(String say){
-		
-	}
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-		System.out.println("init");
-	}
+    public HelloServlet(String say) {
 
-	@Override
-	public ServletConfig getServletConfig() {
-		// TODO Auto-generated method stub
-		System.out.println("ServletConfig");
-		return null;
-	}
+    }
 
-	@Override
-	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.println("HelloServlet service");
-	}
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        // TODO Auto-generated method stub
+        System.out.println("init");
+    }
 
-	@Override
-	public String getServletInfo() {
-		// TODO Auto-generated method stub
-		System.out.println("getServletInfo");
-		return null;
-	}
+    @Override
+    public ServletConfig getServletConfig() {
+        // TODO Auto-generated method stub
+        System.out.println("ServletConfig");
+        return null;
+    }
 
-	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-		System.out.println("destroy");
-	}
+    @Override
+    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        System.out.println("HelloServlet service");
+    }
+
+    @Override
+    public String getServletInfo() {
+        // TODO Auto-generated method stub
+        System.out.println("getServletInfo");
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+        // TODO Auto-generated method stub
+        System.out.println("destroy");
+    }
 
 }

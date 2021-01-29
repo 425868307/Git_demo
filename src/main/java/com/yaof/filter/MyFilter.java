@@ -13,28 +13,29 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 原生的Filter会在spring定义的拦截器(WebMvcConfigurerAdapter)之前进行拦截
+ *
  * @author yaofang
  */
 @Configuration
 public class MyFilter implements Filter {
 
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		System.out.println("into my filter");
-		chain.doFilter(request, response);
-	}
+    }
 
-	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        System.out.println("into my filter");
+        chain.doFilter(request, response);
+    }
+
+    @Override
+    public void destroy() {
+        // TODO Auto-generated method stub
+
+    }
 
 }
