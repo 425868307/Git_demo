@@ -27,7 +27,7 @@ public class ServiceCutPoint {
     private HttpServletRequest request;
 
 
-    @Before("execution(* com.yaof.service.**.*(..))")
+    @Before("execution(* com.yaof.service.*.*(..))")
     public void before() {
         logger.info("execution(* com.yaof.service.**.*(..))");
     }

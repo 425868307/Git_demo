@@ -31,8 +31,8 @@ public class TestController {
     @Value("${lockString}")
     private String lockString;    //配置properties属性值注入
 
-    @Autowired
-    private DataSource dataSource;
+//    @Autowired
+//    private DataSource dataSource;
 
     @Autowired
     private User user;
