@@ -1,15 +1,6 @@
 package com.yaof.mq;
 
-import javax.jms.Connection;
-import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageConsumer;
-import javax.jms.MessageListener;
-import javax.jms.ObjectMessage;
-import javax.jms.Queue;
-import javax.jms.Session;
-import javax.jms.TextMessage;
+import javax.jms.*;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -40,6 +31,9 @@ public class Test02 {
 
 
             Queue queue = session.createQueue("firstQueue");
+
+//            Destination destination = session.createTopic("topic_one");   //
+//            session.createConsumer(destination);
 
             MessageConsumer consumer = session.createConsumer(queue);
 

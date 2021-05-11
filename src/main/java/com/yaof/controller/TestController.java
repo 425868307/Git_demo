@@ -1,25 +1,22 @@
 package com.yaof.controller;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.sql.DataSource;
-
+import com.alibaba.fastjson.JSON;
+import com.yaof.pojo.Student;
+import com.yaof.pojo.User;
+import com.yaof.service.TestService;
+import com.yaof.util.JpgUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.fastjson.JSON;
-import com.yaof.aop.MyAnno;
-import com.yaof.pojo.Student;
-import com.yaof.pojo.User;
-import com.yaof.service.TestService;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/test")
 public class TestController {
 
@@ -27,6 +24,9 @@ public class TestController {
 
     @Autowired
     private TestService testService;
+
+//    @Autowired
+//    private DemoServiceImpl demoServiceImpl;
 
     @Value("${lockString}")
     private String lockString;    //配置properties属性值注入
@@ -68,6 +68,20 @@ public class TestController {
 
         return datas;
     }
+
+    @RequestMapping("/demo")
+    @ResponseBody
+    public String testDemo(){
+        try {
+//            ZhuUtils.createImage();
+            JpgUtils.createImage("D://aaa.jpg");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "abc1";
+//        return demoServiceImpl.saySomething();
+    }
+
 
     @RequestMapping("/insertStudent")
     @ResponseBody

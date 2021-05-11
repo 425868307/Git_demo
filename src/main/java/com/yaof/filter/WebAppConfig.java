@@ -9,13 +9,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /*
 拦截器配置类
  */
 @Configuration
-public class WebAppConfig extends WebMvcConfigurerAdapter {
+public class WebAppConfig implements WebMvcConfigurer {
 
     private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
 
@@ -43,7 +44,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
          */
         @Override
         public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-            log.info("---------------开始进入地址拦截器-------------------");
+            log.info("---------------开始进入地址拦截器-------------------"+httpServletRequest.getRequestURI());
             return true;
         }
 

@@ -21,7 +21,7 @@ public class MyFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // TODO Auto-generated method stub
+        System.out.println("myFilter init...");
 
     }
 
@@ -34,7 +34,7 @@ public class MyFilter implements Filter {
 
     @Override
     public void destroy() {
-        // TODO Auto-generated method stub
+        System.out.println("myFilter destroy");
 
     }
 

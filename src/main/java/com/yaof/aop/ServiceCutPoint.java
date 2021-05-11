@@ -47,7 +47,7 @@ public class ServiceCutPoint {
         logger.info(joinPoint.getTarget().toString());
     }
 
-    @After(" logPoint()")
+    @After("logPoint()")
     public void logInsert(JoinPoint joinPoint) {
         logger.info("============logPoint @After===========");
         logger.info(joinPoint.getStaticPart().toString());

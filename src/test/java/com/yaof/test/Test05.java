@@ -1,6 +1,10 @@
 package com.yaof.test;
 
 import com.yaof.io.User;
+import org.junit.Test;
+
+import java.lang.reflect.Method;
+
 
 public class Test05 {
 
@@ -13,6 +17,13 @@ public class Test05 {
         user.setName("dcs犯得上发生");
         user.setAge(23);
         System.out.println(user);
+
+        Method[] method = Test05.class.getDeclaredMethods();
+        for (Method m :
+                method) {
+            Test annotation = m.getAnnotation(Test.class);
+            System.out.println(annotation);
+        }
     }
 
 }

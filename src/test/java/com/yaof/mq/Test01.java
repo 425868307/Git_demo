@@ -59,7 +59,8 @@ public class Test01 {
 
         ObjectMessage objectMessage = session.createObjectMessage(user);
 
-
+        producer.setTimeToLive(300L);
+        producer.send(session.createTextMessage("abcde"));
         //8.发送消息
         producer.send(objectMessage);
         //9.关闭资源
