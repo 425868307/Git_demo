@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  */
 public class Test02 {
     public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(4);
         map.put("aaa", "a1");
         map.put("bbb", "a2");
         map.put("ccc", "a3");
